@@ -1,0 +1,36 @@
+﻿@model Soccer.Models.Player
+
+@{
+    ViewBag.Title = "new Player";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Player</legend>
+        <p>
+            Имя игрока <br />
+            @Html.EditorFor(model=>model.Name)
+        </p>
+
+        <p>
+            Возраст <br />
+            @Html.EditorFor(model =>model.Age)
+        </p>
+
+        <p>
+            Позиция на поле <br />
+            @Html.EditorFor(model=>model.Position)
+        </p>
+        <p>
+            Команда<br />
+            @Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="add player" />
+        </p>
+    </fieldset>
+
+}

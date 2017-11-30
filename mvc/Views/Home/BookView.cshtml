@@ -1,0 +1,13 @@
+﻿@model mvc.Models.Book
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Книга № @Model.Id</h2>
+@using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+{
+    @Html.EditorForModel();
+    <p><input type="submit" value="Отправить" /></p>
+}
+

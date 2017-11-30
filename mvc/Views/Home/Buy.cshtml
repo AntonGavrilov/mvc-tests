@@ -1,0 +1,43 @@
+﻿@model mvc.Models.Purchase
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Footer{
+    Все права защищены. Syle Corp. 2017
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Покупка</title>
+</head>
+<body>
+    <div> 
+        <h3>Форма оформления покупки</h3>
+        <h4>Вы покупаете товар @ViewBag.BookName</h4>
+
+
+        @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+        {
+            @Html.HiddenFor( m => m.BookId)           
+
+            @Html.LabelFor(m => m.Person, "Введите свое имя")
+            <br />   
+            @Html.TextBoxFor(m => m.Person)
+            <br /><br />
+            @Html.LabelFor(m=> m.Address, "Введите адрес")
+            <br />
+            @Html.TextBoxFor(m => m.Address)
+            <br /><br />
+            @Html.LabelFor(m => m.Age, "Введите возраст")
+            <br />
+            @Html.TextBoxFor(m => m.Age)
+            <br /><br />
+            <p><input type="submit" value="Отправить" /></p>
+        }
+    </div>
+</body>
+</html>

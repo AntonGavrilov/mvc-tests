@@ -1,0 +1,10 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ListBox("Books", new MultiSelectList(ViewBag.BookList, "Value", "Text"))
+    <p><input type="submit", value="Отправить"></p>
+}

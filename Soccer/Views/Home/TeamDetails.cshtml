@@ -1,0 +1,33 @@
+﻿@using Soccer.Models
+
+@model Team
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div>
+    <h4>Команда @Model.Name</h4>
+    <hr />
+
+    <dl>
+        <dt>Название</dt>
+
+        <dd>
+            @Html.DisplayFor(model=>model.Name)
+        </dd>
+        
+        <dt>Игроки</dt>
+        
+        <dd>
+            <ul>
+                @foreach (Player player in Model.Players)
+                {
+                    <li>@player.Name (@player.Position)</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+

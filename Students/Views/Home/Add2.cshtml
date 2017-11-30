@@ -1,0 +1,25 @@
+﻿@using Students.Models;
+
+
+@model Student
+
+
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    Student myStudent = new Student() { Name = "вася", Surename = "Пупкин" };
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m=> myStudent)
+    @Html.EditorForModel();
+    <input type="submit" />
+}
+
+<h2>View</h2>
+

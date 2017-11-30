@@ -1,0 +1,61 @@
+﻿@using Students.Models
+@using System
+
+
+@model Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+@using (Html.BeginForm())
+{
+
+
+
+    
+<fieldset>
+    <legend>Студент</legend>
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="editor-label"><b>Имя</b></div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+    </div>
+    
+    <div class="editor-label"><b>Фамилия</b></div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Surename)
+    </div>
+    <div class="editor-label"><b>Курсы</b></div>
+    @foreach (Course c in ViewBag.Courses)
+    {
+        <input type="checkbox" name="selectedCourses" value="@c.Id"
+               @(Model.Courses.Contains(c) ? "checked=\"checked\"" : "") />@c.Name <br />
+    }
+
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+    @{
+        int i = ((Model.Id) % ViewBag.StudentsCount) + 1;
+    }
+    <p>
+        @Html.ActionLink("Следующий студент", String.Concat("Edit/", i), "Home", null);
+        @Html.ActionLink("Петрова", "Edit", "Home", new { id = 2 , studentStr = "Петрова" }, new { id = "Petrova", @class="link"});
+        @Html.RouteLink("Петрова", new { controller = "Home", action = "Edit", studentStr = "Петрова", id = 2}, new { id = "Petrova", @class = "link" })
+        @Url.RouteUrl(new { controller = "Home", action = "Edit", studentStr = "Петрова", id = 3})
+    </p>
+    
+</fieldset>
+
+}
+
+
+
+
+
+
