@@ -10,9 +10,9 @@ namespace mvc.Models
     {
         protected override void Seed(BookContext db)
         {
-            db.Books.Add(new Book { Name = "Война и миров", Author = "Л.Толстой", Price = 200, Age = 21 });
-            db.Books.Add(new Book { Name = "Отцы и дети", Author = "И.Тургенев", Price = 180, Age = 5 });
-            db.Books.Add(new Book { Name = "Чайка", Author = "А.Чехов", Price = 150, Age = 5 });
+            db.Books.Add(new Book { Name = "Война и миров", AuthorId = 1, Price = 200, Age = 21 });
+            db.Books.Add(new Book { Name = "Отцы и дети", AuthorId = 2, Price = 180, Age = 5 });
+            db.Books.Add(new Book { Name = "Чайка", AuthorId = 1, Price = 150, Age = 5 });
         }
     }
 }

@@ -1,0 +1,24 @@
+﻿@model mvc.Models.Book
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    int bookId = Model.Id;
+
+
+
+
+<h2>книга @Model.Name</h2>
+<p>
+    @Html.DisplayForModel();
+</p>
+
+<p>
+    Автор @Html.ActionLink(Model.Author.Name, "GetAuthor",  new { Id = bookId })
+</p>
+  
+}
+

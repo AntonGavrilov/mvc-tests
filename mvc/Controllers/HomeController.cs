@@ -24,6 +24,49 @@ namespace mvc.Controllers
             base.Dispose(disposing);
         }
 
+
+
+        public ActionResult GetBook(int? Id)
+        {
+            if(Id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Book book = db.Books.Include(b => b.Author).
+                FirstOrDefault(b => b.Id == Id);
+
+            if (book == null)
+                return HttpNotFound();
+
+            return View("Book", book);
+        }
+
+        public ActionResult GetAuthor(int? Id)
+        {
+            if(Id == null){
+                return HttpNotFound();
+            }
+
+            Book book = db.Books.Include(b => b.Author)
+                .FirstOrDefault(b => b.Id == Id);
+
+            if (book == null)
+                return HttpNotFound();
+
+            return View("Author", book.Author);
+
+        }
+
+
+        [Route("{id:int}/{name}")]
+        public string Test(int id, string name)
+        {
+            return id.ToString() + ". " + name;
+        }
+
+
+
         public ActionResult Index()
         {       
             IEnumerable<Book> books = db.Books;
