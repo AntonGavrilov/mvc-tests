@@ -320,6 +320,7 @@
     <Folder Include="Areas\Store\Views\Home\" />
     <Folder Include="Areas\Store\Views\Shared\" />
     <Folder Include="Areas\Store\Views\Shop\" />
+    <Folder Include="testfolder\" />
     <Folder Include="Views\AsyncHome\" />
   </ItemGroup>
   <ItemGroup>
