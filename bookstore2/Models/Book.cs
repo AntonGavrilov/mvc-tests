@@ -15,5 +15,7 @@ namespace bookstore2.Models
         public string Author { get; set; }
 
         public int Year { get; set; }
+
+        public int Year2 { get; set; }
     }
 }
