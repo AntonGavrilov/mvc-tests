@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using bookstore2.Models;
 
 namespace bookstore2.Controllers
 {
     public class HomeController : Controller
     {
+        BookContext db = new BookContext();
+
+
         public ActionResult Index()
         {
-            return View();
+            var firstbook = db.Books.FirstOrDefault();
+
+
+
+            return View(firstbook);
         }
 
         public ActionResult About()
