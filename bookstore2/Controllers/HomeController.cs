@@ -15,9 +15,7 @@ namespace bookstore2.Controllers
         public ActionResult Index()
         {
             var firstbook = db.Books.FirstOrDefault();
-
-
-
+            
             return View(firstbook);
         }
 

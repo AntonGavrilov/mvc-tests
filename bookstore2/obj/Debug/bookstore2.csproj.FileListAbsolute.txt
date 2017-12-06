@@ -45,3 +45,9 @@ c:\users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\bookstore2\bin
 c:\users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\bookstore2\obj\Debug\bookstore2.csprojResolveAssemblyReference.cache
 c:\users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\bookstore2\obj\Debug\bookstore2.dll
 c:\users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\bookstore2\obj\Debug\bookstore2.pdb
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\EntityFramework.dll
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\EntityFramework.SqlServer.dll
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\EntityFramework.xml
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\EntityFramework.SqlServer.xml
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\ru\EntityFramework.resources.dll
+C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\bookstore2\bin\ru\EntityFramework.SqlServer.resources.dll

@@ -51,6 +51,31 @@ audio:not([controls]) {
   display: none;
 }
 
+.field-validation-error{
+    color: #6699CC;
+    font-weight:100;
+    text-decoration: inherit;
+    background-color:  lightpink
+}
+ 
+input.input-validation-error {
+    border: 1px solid #006699;
+    background-color: lightpink;
+}
+
+input.form-control text-box single-line {
+    border: 1px solid #006699;
+    background-color:  aqua;
+}
+
+
+.validation-summary-errors {
+    border: 1px solid #006699;
+    background-color:  aqua;
+}
+
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -315,7 +340,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #d6e9c6;
 }
 
 input,

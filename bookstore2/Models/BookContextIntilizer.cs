@@ -10,9 +10,9 @@ namespace bookstore2.Models
     {
         protected override void Seed(BookContext db)
         {
-            db.Books.Add(new Book { Name = "Война и мир"});
-            db.Books.Add(new Book { Name = "Отцы и дети"});
-            db.Books.Add(new Book { Name = "Чайка"});
+            db.Books.Add(new Book { Name = "Война и мир", Author = "Гаврилов", Year = 2010});
+            db.Books.Add(new Book { Name = "Отцы и дети", Author = "Гаврилов", Year = 1989});
+            db.Books.Add(new Book { Name = "Чайка", Author = "Гаврилов", Year = 1989 });
         }
     }
 }

@@ -42,6 +42,25 @@ video {
   display: inline-block;
 }
 
+
+field-validation-valid{
+    color: #6699CC;
+    font-weight:bold;
+    text-decoration:underline;
+}
+ 
+input.input-validation-error {
+    border: 1px solid #006699;
+    background-color: salmon;
+}
+
+form-control text-box single-line {
+    border: 1px solid #006699;
+    background-color: salmon;
+}
+
+
+
 audio:not([controls]) {
   display: none;
   height: 0;
