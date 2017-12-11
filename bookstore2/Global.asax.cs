@@ -7,6 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
 using bookstore2.Models;
+using bookstore2.Validation;
 
 namespace bookstore2
 {
@@ -14,6 +15,7 @@ namespace bookstore2
     {
         protected void Application_Start()
         {
+            ModelValidatorProviders.Providers.Add(new MyValidationProvider());
             Database.SetInitializer(new BookDbIntilizer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

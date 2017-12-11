@@ -52,26 +52,22 @@ audio:not([controls]) {
 }
 
 .field-validation-error{
-    color: #6699CC;
+    color: red;
     font-weight:100;
-    text-decoration: inherit;
-    background-color:  lightpink
+    text-decoration: dotted;
 }
  
 input.input-validation-error {
     border: 1px solid #006699;
-    background-color: lightpink;
 }
 
 input.form-control text-box single-line {
     border: 1px solid #006699;
-    background-color:  aqua;
 }
 
 
 .validation-summary-errors {
     border: 1px solid #006699;
-    background-color:  aqua;
 }
 
 

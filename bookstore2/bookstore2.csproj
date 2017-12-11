@@ -125,6 +125,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotations\MyAuthor.cs" />
+    <Compile Include="Annotations\MyAuthorsAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -134,9 +136,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Book1.cs" />
     <Compile Include="Models\BookContext.cs" />
     <Compile Include="Models\BookContextIntilizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\BookPropertValidator.cs" />
+    <Compile Include="Validation\BookValidator.cs" />
+    <Compile Include="Validation\MyValidationProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Bookstore2.mdf" />

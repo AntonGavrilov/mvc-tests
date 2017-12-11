@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using bookstore2.Models;
 
+
 namespace bookstore2.Controllers
 {
     public class BooksController : Controller
@@ -17,7 +18,8 @@ namespace bookstore2.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            db.Configuration.ValidateOnSaveEnabled = false;
+            return View(db.Books);
         }
 
         // GET: Books/Details/5
@@ -48,20 +50,11 @@ namespace bookstore2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Author,Year")] Book book)
         {
-            ModelState.AddModelError("", "Все плохо!!!");
 
             if (String.IsNullOrEmpty(book.Name))
             {                
                 ModelState.AddModelError("Name", "Некоректное название книги");
             }
-            else if (book.Name.Length > 5)
-            {
-                ModelState.AddModelError("Name", "Недопустимая длина строки");
-            }
-
-            if(book.Name.StartsWith("a"))
-                ModelState.AddModelError("Name", "Не должна начинаться с буквы 'А'");
-
 
 
             if (ModelState.IsValid)
