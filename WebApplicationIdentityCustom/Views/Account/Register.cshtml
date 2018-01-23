@@ -1,0 +1,53 @@
+﻿@model WebApplicationIdentityCustom.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Регистрация</h2>
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <h4>Вы уже зарегистрированы</h4>
+        return;
+
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        <h4>Регистрация пользовател</h4>
+        <hr />
+        @Html.ValidationSummary(false)
+        <div>
+            Электронный адрес
+            <div>
+                @Html.EditorFor(model=>model.Email)
+            </div>
+        </div>
+        <div>
+            Год рождения
+            <div>
+                @Html.EditorFor(model => model.Year)
+            </div>
+        </div>
+        <div>
+            Пароль
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </div>
+        <div>
+            Подтвердить пароль
+            <div>
+                @Html.EditorFor(model => model.PasswordConfirm)
+            </div>
+        </div>
+        <input type="submit" value="Зарегистрировать" />
+    </div>
+}

@@ -9,15 +9,19 @@
  <nav>
      <ul class="Menu">
          <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+
+         @if (User.Identity.IsAuthenticated)
+         {
+             <li>@Html.ActionLink("Выход", "LogOff", "Account")</li>
+         }
      </ul>
+
  </nav>
     
     @RenderBody()
 
     <p></p>
     <p></p>
-    <footer>@RenderSection("Footer", false)</footer>
-
 
 </body>
 </html>

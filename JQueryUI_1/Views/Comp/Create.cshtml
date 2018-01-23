@@ -1,0 +1,21 @@
+﻿@model JQueryUI_1.Models.Computer
+
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(model => Model.Model);
+            <p>@Html.EditorFor(model=>model.Model)</p>
+        </div>
+        <div>
+            @Html.LabelFor(model => Model.Year);
+            <p>@Html.EditorFor(model => model.Year)</p>
+        </div>
+        @Html.AntiForgeryToken()
+        <p><input type="submit", value="Добавить" /></p>
+    }
+
+</div>
+

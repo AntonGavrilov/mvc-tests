@@ -135,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MyBookModelBinders\BookModelBinder.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Book1.cs" />
     <Compile Include="Models\BookContext.cs" />
@@ -143,6 +144,8 @@
     <Compile Include="Validation\BookPropertValidator.cs" />
     <Compile Include="Validation\BookValidator.cs" />
     <Compile Include="Validation\MyValidationProvider.cs" />
+    <Compile Include="ValueProviders\BrowserValueProvider.cs" />
+    <Compile Include="ValueProviders\BrowserValueProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Bookstore2.mdf" />
@@ -151,6 +154,7 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CommonException.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -161,6 +165,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -188,6 +194,12 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\BookSearch.cshtml" />
+    <Content Include="Views\Books\Search.cshtml" />
+    <Content Include="Views\Books\CurBook.cshtml" />
+    <Content Include="Views\Books\JsonSearch.cshtml" />
+    <Content Include="Views\Books\SearchAjax.cshtml" />
+    <Content Include="Views\Books\BookSearchAjax.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

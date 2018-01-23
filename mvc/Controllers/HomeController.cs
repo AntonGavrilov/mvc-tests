@@ -7,11 +7,13 @@ using mvc.Models;
 using mvc.Util;
 using System.IO;
 using System.Data.Entity;
+using mvc.Filters;
 
 
 
 namespace mvc.Controllers
 {
+    [Authorize(Users = "anton2222222222222@gmail.com")]
     public class HomeController : Controller
     {
 
@@ -64,11 +66,24 @@ namespace mvc.Controllers
         {
             return id.ToString() + ". " + name;
         }
+        [Authorize(Users = "antosha")]
+        public ActionResult Logs()
+        {
+            LogContext logContext = new LogContext();
 
 
-
+            return View(logContext.Visitors);
+        }
+            
+        //[MyAuthFilter]
+        [MyAuthorizeAttribute(Roles = "administrator, buh")]
+        //[IndexException]
+        [HandleError(ExceptionType = typeof(System.IndexOutOfRangeException), View = "Error")]
+       // [Cache(Duration =60)]
+        [WhiteSpaceAttribute]
+        [LogAttribute]
         public ActionResult Index()
-        {       
+        {
             IEnumerable<Book> books = db.Books;
             ViewBag.Books = books;
 

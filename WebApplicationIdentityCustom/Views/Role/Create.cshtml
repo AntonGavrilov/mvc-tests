@@ -1,0 +1,34 @@
+﻿@model WebApplicationIdentityCustom.Models.CreateRoleModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Новая роль</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+    <hr />
+    @Html.ValidationSummary(false)
+    <div>
+        Название 
+        <div>
+            <p>@Html.EditorFor(m => m.Name)</p>
+        </div>
+    </div>
+
+    <div>
+        Описание
+        <div>
+           <p>@Html.EditorFor(m => m.Description)</p>
+        </div>
+    </div>
+        <p><input type="submit" value="Создать" /><p></p>
+    </div>
+
+
+
+    
+}
+

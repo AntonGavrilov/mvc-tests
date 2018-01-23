@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using bookstore2.Models;
+using System.Threading;
 
 
 namespace bookstore2.Controllers
@@ -20,6 +21,75 @@ namespace bookstore2.Controllers
         {
             db.Configuration.ValidateOnSaveEnabled = false;
             return View(db.Books);
+        }
+ 
+        public JsonResult JsonSearch(String name)
+        {
+            Thread.Sleep(3000);
+            var jsonData = db.Books.Where(a => a.Author.Contains(name)).ToList();
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult CurBook(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Book book = db.Books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView(book);
+        }
+
+        [HttpPost]
+        public ActionResult BookSearch(string name)
+        {
+            Thread.Sleep(3000);
+
+            var allbooks = db.Books.Where(a => a.Author.Contains(name)).ToList();
+                
+            if(allbooks.Count < 0)
+            {
+                return HttpNotFound();
+            }
+
+            return PartialView(allbooks);
+        }
+
+
+
+        public ActionResult BookSearchAjax(string name)
+        {
+            Thread.Sleep(3000);
+
+            var allbooks = db.Books.Where(a => a.Author.Contains(name)).ToList();
+
+            if (allbooks.Count < 0)
+            {
+                return HttpNotFound();
+            }
+
+            return PartialView(allbooks);
+        }
+
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        public ActionResult SearchAjax()
+        {
+            return View();
+        }
+
+
+        public string BrowserInfo(string browser)
+        {
+            return browser;
         }
 
         // GET: Books/Details/5
@@ -48,7 +118,7 @@ namespace bookstore2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Author,Year")] Book book)
+        public ActionResult Create([Bind(Include = "Name,Author,Year")] Book book)
         {
 
             if (String.IsNullOrEmpty(book.Name))

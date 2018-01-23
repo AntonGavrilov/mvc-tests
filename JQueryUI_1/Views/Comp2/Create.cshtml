@@ -1,0 +1,28 @@
+﻿@model JQueryUI_1.Models.Computer
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <h4>Новая модель</h4>
+
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.LabelFor(model => model.Model)
+            <div>
+                @Html.EditorFor(model => model.Model)
+                @Html.ValidationMessageFor(model => model.Model, "")
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Year)
+            <div>
+                @Html.EditorFor(model => model.Year)
+                @Html.ValidationMessageFor(model => model.Year, "")
+            </div>
+        </div>
+    </div>
+}
+

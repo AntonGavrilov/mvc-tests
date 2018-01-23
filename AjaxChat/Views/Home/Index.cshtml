@@ -1,0 +1,44 @@
+﻿@model AjaxChat.Models.ChatModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title> Чат </title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div id="UserName">
+    </div>
+    <div id="LastRefresh">
+    </div>
+    <div id="container">
+        <div id="loginBlock">
+            Введите Имя:
+            <input type="text" id="txtUserName" />
+            <button id="btnLogin" value="Войти">Войти</button>
+        </div>
+    </div>
+    <div id="Error">
+    </div>
+
+    @Ajax.ActionLink("Login", "Index", new { User = "" },
+                    new AjaxOptions { UpdateTargetId = "container",
+                        OnFailure = "LoginOnFailure",
+                        OnSuccess = "LoginOnSuccess"
+                    },
+                    new { id = "LoginButton", style = "visibility:hidden" })
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/Scripts/chat.js")
+
+</body>
+
+</html>

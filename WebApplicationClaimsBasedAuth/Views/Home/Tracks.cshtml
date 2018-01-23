@@ -1,0 +1,44 @@
+﻿@using WebApplicationClaimsBasedAuth.Models;
+@model IEnumerable<WebApplicationClaimsBasedAuth.Models.Track>
+
+@{
+    ViewBag.Title = "My Tracks";
+}
+
+<h2>My Tracks</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        Track name                        
+                    </th>
+                    <th>
+                        Artist
+                    </th>
+                    <th>
+                        Style
+                    </th>
+                    <th>
+                        Duration
+                    </th>
+                </tr>
+
+                @foreach (Track item in Model)
+                {                    
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Artist.Name</td>
+                        <td>@item.Artist.MusicStyle</td>
+                        <td>@item.Duration</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

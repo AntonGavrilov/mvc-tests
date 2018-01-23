@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplicationIdentityCustom.Models.ApplicationRole>
+
+@{
+    ViewBag.Title = "Роли";
+}
+
+<h2>Роли</h2>
+
+
+<hr />
+<div class="navbar-link">
+    @Html.ActionLink("Создать новую роль", "Create")
+</div>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Название роли</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@Html.ActionLink("Редактировать", "Edit", new { id = item.Id}) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

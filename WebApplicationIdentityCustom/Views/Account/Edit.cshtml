@@ -1,0 +1,26 @@
+﻿@model WebApplicationIdentityCustom.Models.EditModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Редактировать данные профилья</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary(true, "")
+        <div>
+            <p>Year: @Html.EditorFor(model => model.Yeat)</p>
+        </div>
+
+        <div>
+            <div>
+                <input type="submit" value="Сохранить" />
+            </div>
+        </div>
+
+    </div>
+}

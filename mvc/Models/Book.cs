@@ -12,7 +12,7 @@ namespace mvc.Models
         [HiddenInput (DisplayValue = false)]
         public int Id { get; set; }
         [Display(Name = "Название")]
-        [UIHint("Url")]
+        //[UIHint("Url")]
         public string Name { get; set; }
         [Display(Name = "Автор")]
         public Author Author { get; set; }

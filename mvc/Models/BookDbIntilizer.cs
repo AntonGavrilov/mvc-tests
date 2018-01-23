@@ -13,6 +13,7 @@ namespace mvc.Models
             db.Books.Add(new Book { Name = "Война и миров", AuthorId = 1, Price = 200, Age = 21 });
             db.Books.Add(new Book { Name = "Отцы и дети", AuthorId = 2, Price = 180, Age = 5 });
             db.Books.Add(new Book { Name = "Чайка", AuthorId = 1, Price = 150, Age = 5 });
+            db.Books.Add(new Book { Name = "Чайкаddd", AuthorId = 1, Price = 150, Age = 5 });
         }
     }
 }

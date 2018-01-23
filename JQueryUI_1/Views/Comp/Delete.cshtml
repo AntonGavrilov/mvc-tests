@@ -1,0 +1,17 @@
+﻿@model JQueryUI_1.Models.Computer
+
+<div>
+    <h3>Ид: @Html.DisplayFor(m => m.Id)</h3>
+    <h3>Модель: @Html.DisplayFor(m => m.Model)</h3>
+    <h3>Год выпуска: @Html.DisplayFor(m => m.Year)</h3>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+
+</div>
+
+

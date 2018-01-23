@@ -1,0 +1,17 @@
+﻿<input type="text" name="name" id="search" />
+<input type="button" id="submit" value="Поиск" />
+<div id="results"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#submit').click(function (e) {
+            e.preventDefault();
+            var name = $('#search').val();
+            name = decodeURIComponent(name);
+            $("#results").load('@Url.Action("BookSearchAjax", "Books")?name=' + name)
+        })
+    });
+</script>
+
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")

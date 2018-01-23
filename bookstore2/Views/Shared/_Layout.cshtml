@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/scripts/jquery-10.2.min.js")
+    @Scripts.Render("~/scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/scripts/jwuery.unobtrusice-ajax.js")
+    @Scripts.Render("~/scripts/validate.min.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,6 +32,7 @@
         </div>
     </div>
     <div class="container body-content">
+        <hr />
         @RenderBody()
         <hr />
         <footer>

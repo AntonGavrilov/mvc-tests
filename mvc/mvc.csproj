@@ -205,6 +205,12 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Filters\CacheAttribute.cs" />
+    <Compile Include="Filters\IndexException.cs" />
+    <Compile Include="Filters\LogAttribute.cs" />
+    <Compile Include="Filters\MyAuthFilter.cs" />
+    <Compile Include="Filters\MyAuthorizeAttribute.cs" />
+    <Compile Include="Filters\WhiteSpaceAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,11 +222,13 @@
     <Compile Include="Models\BookContext.cs" />
     <Compile Include="Models\BookDbIntilizer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LogContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Purchase.cs" />
     <Compile Include="Models\SoccerContext.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteHandlers\MyRouteHandler.cs" />
     <Compile Include="Startup.cs" />
@@ -229,6 +237,10 @@
     <Compile Include="Util\ImageResult.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Logs.mdf" />
+    <Content Include="App_Data\Logs_log.ldf">
+      <DependentUpon>Logs.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Hydrangeas.jpg" />
@@ -314,9 +326,9 @@
     <Content Include="Views\BookController2\Details.cshtml" />
     <Content Include="Views\BookController2\Edit.cshtml" />
     <Content Include="Views\BookController2\Index.cshtml" />
+    <Content Include="Views\Home\Logs.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Store\Models\" />
     <Folder Include="Areas\Store\Views\Home\" />
     <Folder Include="Areas\Store\Views\Shared\" />

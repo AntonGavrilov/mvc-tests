@@ -1,0 +1,31 @@
+﻿@model IEnumerable<bookstore2.Models.Book>
+
+@{ 
+    var count = Model.Count();
+
+}
+<div id ="searchresults">
+    @if (count == 0)
+    {
+        <h3>Ничего не найдено</h3>
+    }
+    else
+    {
+
+     var book = Model.First();
+
+        <h3>Все книги автора @book.Author </h3>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div style="margin-right:8px;float:left">
+                            @Ajax.ActionLink(item.Name, actionName: "CurBook/" + item.Id ,
+                                            ajaxOptions: new AjaxOptions { UpdateTargetId = "curBook" });
+                        </div>                        
+                    </li>
+                }
+            </ul>
+    }
+
+</div>

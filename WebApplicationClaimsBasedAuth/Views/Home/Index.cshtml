@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Music bound";
+}
+
+<div class="jumbotron">
+    <h1>Music bound</h1>
+    <p class="lead">Listen your music every where!</p>
+    <p>@Html.ActionLink("Register now >>", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4 border">
+        <h2>Getting started</h2>
+        <p>
+            Create your own playlists and share them with friends
+        </p>
+        <p><a class="btn btn-default " href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more music</h2>
+        <p>Save music from shared libraries.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿
+<script>
+    function OnSuccess(data) {
+        var results = $('#results');
+        results.empty();
+        for (var i = 0; i < data.length; i++) {
+            results.append('<li>' + data[i].Name + '</li>')
+        }
+    }
+</script>
+
+<div>
+    @using (Ajax.BeginForm("JsonSearch", new AjaxOptions { OnSuccess = "OnSuccess" }))
+    {
+        <input type="text" name="name" />
+        <input type="submit" value="Поиск" />
+    }
+</div>
+<br />
+<div id="results"></div>
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
