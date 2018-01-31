@@ -45,3 +45,7 @@ C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\JQGrid\bin\ru\
 C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\JQGrid\obj\Debug\JQGrid.csprojResolveAssemblyReference.cache
 C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\JQGrid\obj\Debug\JQGrid.dll
 C:\Users\anton.gavrilov\documents\visual studio 2015\Projects\mvc\JQGrid\obj\Debug\JQGrid.pdb
+C:\Users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\JQGrid\bin\PagedList.dll
+C:\Users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\JQGrid\bin\PagedList.Mvc.dll
+C:\Users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\JQGrid\bin\PagedList.xml
+C:\Users\anton.gavrilov\Documents\Visual Studio 2015\Projects\mvc\JQGrid\bin\PagedList.Mvc.xml

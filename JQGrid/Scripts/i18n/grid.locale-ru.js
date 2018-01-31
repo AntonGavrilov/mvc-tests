@@ -11,7 +11,7 @@ $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
 	defaults : {
 		recordtext: "Просмотр {0} - {1} из {2}",
-		emptyrecords: "Нет записей для просмотра",
+		emptyrecords: "Тут ничего нет",
 		loadtext: "Загрузка...",
 		pgtext : "Стр. {0} из {1}"
 	},
