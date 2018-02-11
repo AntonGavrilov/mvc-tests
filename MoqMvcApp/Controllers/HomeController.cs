@@ -21,20 +21,25 @@ namespace MoqMvcApp.Controllers
             repo = new ComputerRepository();
         }
 
-        public ActionResult Index()
+        public string Index()
         {
-            var model = repo.GetComputerList();
 
-            if (model.Count > 0)
-                ViewBag.Message = String.Format("В базе данных {0} объект", 2);
+            List<string> events = HttpContext.Application["events"] as List<string>;
 
-            return View(model);
-            //View(repo.GetComputerList());
+            var result = "<ul>";
+
+            events.ForEach(e => result += "<li>" + e + "</li>");
+
+            return result ;
         }
 
         [HttpPost]
         public ActionResult Create(Computer c)
         {
+
+            if (c.Name.Length < 5)
+                ModelState.AddModelError("Name", "Название должно быть больше 5");
+
             if (ModelState.IsValid)
             {
                 repo.Create(c);

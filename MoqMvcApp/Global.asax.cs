@@ -10,6 +10,13 @@ namespace MoqMvcApp
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public MvcApplication()
+        {
+            BeginRequest += (src, args) => AddEvent("BeginRequest");
+            AuthenticateRequest += (src, args) => AddEvent("AuthenticateRequest ");
+            PreRequestHandlerExecute += (src, args) => AddEvent("PreRequestHandlerExecute ");
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -17,5 +24,33 @@ namespace MoqMvcApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        /*
+        protected void Application_BeginRequest()
+        {
+            AddEvent("BeginRequest");
+        }
+
+        protected void Application_AuthenticateRequest()
+        {
+            AddEvent("AuthenticateRequest");
+        }
+
+        protected void Application_PreRequestHandlerExecute()
+        {
+            AddEvent("PreRequestHandlerExecute");
+        }
+        */
+        private void AddEvent(string name)
+        {
+            List<string> eventList = Application["events"] as List<string>;
+
+            if(eventList == null)
+            {
+                Application["events"] = eventList = new List<string>();
+            }
+
+            eventList.Add(name);
+        }
+        
     }
 }

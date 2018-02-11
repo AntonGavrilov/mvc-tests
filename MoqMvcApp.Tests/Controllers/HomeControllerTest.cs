@@ -74,6 +74,7 @@ namespace MoqMvcApp.Tests.Controllers
             string expected = "Create";
             var mock = new Mock<IRepository>();
             Computer comp = new Computer();
+            comp.Name = "new new new";
             HomeController controller = new HomeController(mock.Object);
             controller.ModelState.AddModelError("Name", "Название модели не установлено");
 
@@ -95,6 +96,7 @@ namespace MoqMvcApp.Tests.Controllers
             //arrange
             var mock = new Mock<IRepository>();
             Computer comp = new Computer();
+            comp.Name = "new new new";
             HomeController controller = new HomeController(mock.Object);
 
             //act
@@ -104,6 +106,28 @@ namespace MoqMvcApp.Tests.Controllers
             mock.Verify(a => a.Create(comp));
             mock.Verify(a => a.Save());
 
+        }
+
+        [TestMethod]
+        public void CreatePostAction_ErrorNameHasBeenMore5()
+        {
+            //arrange
+            var mock = new Mock<IRepository>();
+            Computer comp = new Computer();
+            comp.Name = "urur";
+            mock.Setup(foo => foo.Create(comp));
+            
+            HomeController controller = new HomeController(mock.Object);
+            
+            string expected = "Название должно быть больше 5";
+
+            //act
+            ViewResult result = controller.Create(comp) as ViewResult;
+
+            //assert 
+            //string resultError = controller.ModelState["Error"].Errors[0].ErrorMessage;
+
+            Assert.AreEqual(expected, controller.ModelState.Values.SelectMany(errors => errors.Errors).FirstOrDefault().ErrorMessage);
         }
 
 
@@ -117,7 +141,7 @@ namespace MoqMvcApp.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("hui", result.ViewBag.Message);
+            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
         [TestMethod]

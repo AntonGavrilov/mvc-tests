@@ -150,6 +150,8 @@
     </Compile>
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Modules\TimerModule.cs" />
+    <Compile Include="Modules\TotalTimeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
